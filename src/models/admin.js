@@ -31,18 +31,18 @@ const serviceSchema=new mongoose.Schema({
   })
 
   const parametersSchema=new mongoose.Schema({
-    Category:
+    Service:
     {
     type:String,
     required:true
     },
-    Parameter:
-    {
-    type:[{value:{
-      type:String
-    }}],
-     required:true
-     }
+   GoldenParameter:{
+    type:[],
+   },
+   AddOnsParameter:{
+    type:[]
+   }
+    
   })
 
   const optionsSchema=new mongoose.Schema({
@@ -64,6 +64,6 @@ const serviceSchema=new mongoose.Schema({
   })
   const admin =new mongoose.model("admin",adminSchema)
   const service=new mongoose.model("Service",serviceSchema); 
-  const parameterModel=new mongoose.model("Parameter Model",parametersSchema);
+  const parameter=new mongoose.model("Parameter",parametersSchema);
   const optionsModel=new mongoose.model("Service Options",optionsSchema); 
-  module.exports= {admin,service,parameterModel,optionsModel};
+  module.exports= {admin,service,parameter,optionsModel};

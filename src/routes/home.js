@@ -16,7 +16,7 @@ const { auth } = require("../handler/auth");
 const { getService, getCustomer, getBookedCustomer, getServiceProvider } = require("../handler/getAdminData");
 const { isLogin } = require("../middleware/authenticate");
 const { getValidUser } = require("../handler/getValidUser");
-const { addServices } = require("../handler/Admin");
+const { addServices, addParameters } = require("../handler/Admin");
 const { register } = require("../handler/register");
  const route=express.Router();
  route.post("/api/signup",register)
@@ -27,4 +27,5 @@ const { register } = require("../handler/register");
  route.get("/api/getBookedCustomer",getBookedCustomer)
  route.get("/api/validUser",isLogin,getValidUser)
  route.post("/api/addServices", upload.single('Image'),addServices)
+ route.post("/api/addParameters",addParameters)
  module.exports=route
