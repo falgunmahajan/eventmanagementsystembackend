@@ -13,11 +13,13 @@ const storage = multer.diskStorage({
   
   const upload = multer({ storage: storage })
 const { auth } = require("../handler/auth");
-const { getService, getCustomer, getBookedCustomer, getServiceProvider } = require("../handler/getAdminData");
+const { getService, getCustomer, getBookedCustomer, getServiceProvider, getParameters } = require("../handler/getAdminData");
 const { isLogin } = require("../middleware/authenticate");
 const { getValidUser } = require("../handler/getValidUser");
-const { addServices, addParameters } = require("../handler/Admin");
+const { addServices, addParameters, addOptions } = require("../handler/Admin");
 const { register } = require("../handler/register");
+const { getServiceOptions } = require("../handler/serviceProvider");
+const { getLocations } = require("../handler/getLocation");
  const route=express.Router();
  route.post("/api/signup",register)
  route.post("/api/login",auth)
@@ -26,6 +28,11 @@ const { register } = require("../handler/register");
  route.get("/api/getServiceProvider",getServiceProvider)
  route.get("/api/getBookedCustomer",getBookedCustomer)
  route.get("/api/validUser",isLogin,getValidUser)
+ route.get("/api/getParameters",getParameters)
+ route.get("/api/getServiceOptions",getServiceOptions)
+ route.get("/api/getLocations",getLocations)
  route.post("/api/addServices", upload.single('Image'),addServices)
  route.post("/api/addParameters",addParameters)
+ route.post("/api/addOptions",addOptions)
+
  module.exports=route
