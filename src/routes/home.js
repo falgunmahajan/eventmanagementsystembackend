@@ -20,6 +20,8 @@ const { addServices, addParameters, addOptions } = require("../handler/Admin");
 const { register } = require("../handler/register");
 const { getServiceOptions } = require("../handler/serviceProvider");
 const { getLocations } = require("../handler/getLocation");
+const { registerService } = require("../handler/registerService");
+const { getServiceData } = require("../handler/getServiceData");
  const route=express.Router();
  route.post("/api/signup",register)
  route.post("/api/login",auth)
@@ -31,8 +33,10 @@ const { getLocations } = require("../handler/getLocation");
  route.get("/api/getParameters",getParameters)
  route.get("/api/getServiceOptions",getServiceOptions)
  route.get("/api/getLocations",getLocations)
+ route.get("/api/getServiceData",getServiceData)
  route.post("/api/addServices", upload.single('Image'),addServices)
  route.post("/api/addParameters",addParameters)
  route.post("/api/addOptions",addOptions)
+ route.post("/api/registerServices",registerService)
 
  module.exports=route
