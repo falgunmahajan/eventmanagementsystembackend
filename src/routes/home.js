@@ -22,6 +22,7 @@ const { getServiceOptions } = require("../handler/serviceProvider");
 const { getLocations } = require("../handler/getLocation");
 const { registerService } = require("../handler/registerService");
 const { getServiceData } = require("../handler/getServiceData");
+const { registerBookedCustomer } = require("../handler/registerbookedcustomer");
  const route=express.Router();
  route.post("/api/signup",register)
  route.post("/api/login",auth)
@@ -38,5 +39,5 @@ const { getServiceData } = require("../handler/getServiceData");
  route.post("/api/addParameters",addParameters)
  route.post("/api/addOptions",addOptions)
  route.post("/api/registerServices",registerService)
-
+ route.post("/api/registerBookedCustomer",registerBookedCustomer)
  module.exports=route

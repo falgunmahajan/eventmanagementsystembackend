@@ -35,7 +35,11 @@ const schema=new mongoose.Schema({
         type:String,
         required:true
     },
-    SelectedParameters:{
+   GoldenParameters:{
+        type:Object,
+        required:true
+    },
+    AddonsParameters:{
         type:Object,
         required:true
     },
