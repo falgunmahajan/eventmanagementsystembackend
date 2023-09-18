@@ -23,6 +23,7 @@ const { getLocations } = require("../handler/getLocation");
 const { registerService } = require("../handler/registerService");
 const { getServiceData } = require("../handler/getServiceData");
 const { registerBookedCustomer } = require("../handler/registerbookedcustomer");
+const { availableDates } = require("../handler/availableDates");
  const route=express.Router();
  route.post("/api/signup",register)
  route.post("/api/login",auth)
@@ -35,6 +36,7 @@ const { registerBookedCustomer } = require("../handler/registerbookedcustomer");
  route.get("/api/getServiceOptions",getServiceOptions)
  route.get("/api/getLocations",getLocations)
  route.get("/api/getServiceData",getServiceData)
+ route.get("/api/availableDates",availableDates)
  route.post("/api/addServices", upload.single('Image'),addServices)
  route.post("/api/addParameters",addParameters)
  route.post("/api/addOptions",addOptions)

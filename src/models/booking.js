@@ -43,14 +43,18 @@ const schema=new mongoose.Schema({
         type:Object,
         required:true
     },
+    Quantity :{
+        type:Number
+    },
     PhoneNumber:{
         type:String,
         required:true
     },
-    Price:{
+    TotalPrice:{
         type:Number,
         required:true
-    }
+    },
+   
 })
-const BookedCustomer=new mongoose.model("Booked Customer",schema)
+const BookedCustomer=new mongoose.model("Booked Customer Services",schema)
 module.exports={BookedCustomer}
