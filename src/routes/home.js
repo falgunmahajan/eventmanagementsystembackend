@@ -39,6 +39,8 @@ const { bookedData } = require("../handler/bookedData");
  route.get("/api/getServiceData",getServiceData)
  route.get("/api/availableDates",availableDates)
  route.get("/api/getBookedData/:id",bookedData)
+ route.get("/api/signout",(req,res)=>{res.clearCookie("id");
+res.send("You are logged out")})
  route.post("/api/addServices", upload.single('Image'),addServices)
  route.post("/api/addParameters",addParameters)
  route.post("/api/addOptions",addOptions)

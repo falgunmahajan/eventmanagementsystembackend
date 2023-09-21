@@ -9,13 +9,15 @@ const registerBookedCustomer=async(req,res)=>{
             ServiceProviderName:req.body.ServiceProviderName,
             CustomerName:req.body.CustomerName,
             CustomerId:req.body.CustomerId,
+            Address:req.body.Location.Name,
+            PhoneNumber:req.body.CustomerContact,
             BookingStartDate:req.body['Start Date'],
             BookingEndDate:req.body['End Date'],
-            Address:req.body.Location.Name,
+            
             GoldenParameters:req.body.GoldenParameters,
             AddonsParameters:req.body.AddOnsParameter,
             Quantity:req.body.Quantity,
-            PhoneNumber:req.body.CustomerContact,
+           
             TotalPrice:req.body['Total Price']
         })
         console.log(bookedService)
