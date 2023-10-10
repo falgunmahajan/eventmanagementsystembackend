@@ -6,7 +6,7 @@ const cookieParser = require("cookie-parser");
 
 const app=express();
 const route=require("./src/routes/home.js");
-mongoose.connect('mongodb+srv://falgunmahajan:falgun@cluster0.e5dtogn.mongodb.net/EventManagement').then(()=>{
+mongoose.connect(process.env.dbUrl).then(()=>{
     console.log("Database Successfully connected")
 })
 app.listen(process.env.PORT,()=>{
