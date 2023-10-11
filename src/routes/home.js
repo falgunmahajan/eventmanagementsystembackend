@@ -32,15 +32,15 @@ const { bookedData } = require("../handler/bookedData");
  route.get("/api/getCustomer",getCustomer)
  route.get("/api/getServiceProvider",getServiceProvider)
  route.get("/api/getBookedCustomer",getBookedCustomer)
- route.get("/api/validUser",isLogin,getValidUser)
+ route.get("/api/validUser/:token",isLogin,getValidUser)
  route.get("/api/getParameters",getParameters)
  route.get("/api/getServiceOptions",getServiceOptions)
  route.get("/api/getLocations",getLocations)
  route.get("/api/getServiceData",getServiceData)
  route.get("/api/availableDates",availableDates)
  route.get("/api/getBookedData/:id",bookedData)
- route.get("/api/signout",(req,res)=>{res.clearCookie("id");
-res.send("You are logged out")})
+//  route.get("/api/signout",(req,res)=>{res.clearCookie("id");
+// res.send("You are logged out")})
  route.post("/api/addServices", upload.single('Image'),addServices)
  route.post("/api/addParameters",addParameters)
  route.post("/api/addOptions",addOptions)

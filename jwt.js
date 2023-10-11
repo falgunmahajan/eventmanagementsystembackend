@@ -9,7 +9,7 @@ function setToken(user)
    return jwt.sign({
         _id:user._id,
         Role:user.Role
-    },process.env.jwtSecret);
+    },process.env.jwtSecret,{ expiresIn: '5s' });
     
 }
 function getUser(token)

@@ -3,8 +3,8 @@ const { admin } = require("../models/admin");
 const { serviceProvider, Customer } = require("../models/user");
 
 const isLogin=async(req,res, next)=>{
-    console.log(req.cookies)
-const token = req.cookies.id;
+    console.log(req.params.token)
+const token = req.params.token;
 console.log(token)
 try{
     const verifyToken = getUser(token);

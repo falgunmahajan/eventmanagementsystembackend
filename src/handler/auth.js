@@ -19,7 +19,7 @@ const auth = async (req, res) => {
         if (user) {
             const token = setToken(user)
             console.log(token)
-            res.cookie("id", token)
+            // res.cookie("id", token)
             res.status(201).json({user,token})
         }
         else {
