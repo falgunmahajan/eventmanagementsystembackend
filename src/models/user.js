@@ -25,7 +25,7 @@ const schema=new mongoose.Schema({
     Service:{
         type:String
     }
-})
+},{timestamps:true})
 
 const serviceProvider=new mongoose.model("Service Provider",schema);
 const Customer=new mongoose.model("Customer",schema)

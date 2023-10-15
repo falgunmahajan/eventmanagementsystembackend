@@ -26,6 +26,6 @@ const schema=new mongoose.Schema({
         type:Object,
         required:true
     }
-})
+},{timestamps:true})
 const registeredService=new mongoose.model("Registered Service",schema);
 module.exports={registeredService}

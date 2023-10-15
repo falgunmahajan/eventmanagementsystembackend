@@ -25,6 +25,7 @@ const { getServiceData } = require("../handler/getServiceData");
 const { registerBookedCustomer } = require("../handler/registerbookedcustomer");
 const { availableDates } = require("../handler/availableDates");
 const { bookedData } = require("../handler/bookedData");
+const { razorpay, razorpayFunction, paymentVerification } = require("../handler/razorpay");
  const route=express.Router();
  route.post("/api/signup",register)
  route.post("/api/login",auth)
@@ -45,5 +46,8 @@ const { bookedData } = require("../handler/bookedData");
  route.post("/api/addParameters",addParameters)
  route.post("/api/addOptions",addOptions)
  route.post("/api/registerServices",registerService)
- route.post("/api/registerBookedCustomer",registerBookedCustomer)
+//  route.post("/api/registerBookedCustomer",registerBookedCustomer)
+ route.post("/razorpay",razorpayFunction)
+ route.post("/paymentVerification",paymentVerification)
+
  module.exports=route

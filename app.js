@@ -14,6 +14,7 @@ app.listen(process.env.PORT,()=>{
 })
 app.use(express.static("uploads"))
 app.use(express.json())
+app.use(express.urlencoded())
 app.use(cookieParser())
 app.use(cors())
 app.use('',route);

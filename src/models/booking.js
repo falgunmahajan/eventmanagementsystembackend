@@ -41,7 +41,6 @@ const schema=new mongoose.Schema({
     },
     AddonsParameters:{
         type:Object,
-        required:true
     },
     Quantity :{
         type:Number
@@ -54,7 +53,19 @@ const schema=new mongoose.Schema({
         type:Number,
         required:true
     },
+    PayingStatus:{
+        type:String,
+        default:"paid"
+    },
+    OrderId:{
+        type:String,
+        required:true
+    },
+    paymentId:{
+        type:String,
+        required:true
+    }
    
-})
+},{timestamps:true})
 const BookedCustomer=new mongoose.model("Booked Customer Services",schema)
 module.exports={BookedCustomer}
