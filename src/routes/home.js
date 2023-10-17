@@ -22,10 +22,10 @@ const { getServiceOptions } = require("../handler/serviceProvider");
 const { getLocations } = require("../handler/getLocation");
 const { registerService } = require("../handler/registerService");
 const { getServiceData } = require("../handler/getServiceData");
-const { registerBookedCustomer } = require("../handler/registerbookedcustomer");
+
 const { availableDates } = require("../handler/availableDates");
 const { bookedData } = require("../handler/bookedData");
-const { razorpay, razorpayFunction, paymentVerification } = require("../handler/razorpay");
+const {  razorpayFunction, paymentVerification } = require("../handler/razorpay");
  const route=express.Router();
  route.post("/api/signup",register)
  route.post("/api/login",auth)
